@@ -8,7 +8,7 @@ const surveys = [
         country: 'Korea',
         experience: 4,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/something-fishy'
+        pageToEdit: '/something-fishy'
     },
     {
         id: '4537',
@@ -19,7 +19,7 @@ const surveys = [
         country: 'Hungary',
         experience: 3,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/snow-on-me'
+        pageToEdit: '/snow-on-me'
     },
     {
         id: '6759',
@@ -30,7 +30,7 @@ const surveys = [
         country: 'Congo',
         experience: 5,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/let-it-snow'
+        pageToEdit: '/let-it-snow'
     },
     {
         id: '2356',
@@ -41,7 +41,7 @@ const surveys = [
         country: 'China',
         experience: 2,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/something-fishy'
+        pageToEdit: '/something-fishy'
     },
     {
         id: '0907',
@@ -52,7 +52,7 @@ const surveys = [
         country: 'Italy',
         experience: 1,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/something-fishy'
+        pageToEdit: '/something-fishy'
     },
     {
         id: '4731',
@@ -63,8 +63,9 @@ const surveys = [
         country: 'Canada',
         experience: 4,
         suggestion: 'Make the buttons on the bottom bigger',
-        pageToEdit: 'https://ancestry.com/something-fishy'
+        pageToEdit: '/something-fishy'
     },
 ]
 
 export default surveys;
+

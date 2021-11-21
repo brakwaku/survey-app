@@ -1,15 +1,12 @@
-import express from 'express';
-import surveys from '../data/userSurveys.js';
+import express from "express";
 const router = express.Router();
+import {
+  getSurveys,
+  getSurveyById,
+  createSurvey,
+} from "../controllers/surveyController.js";
 
-
-router.get('/', (req, res) => {
-    res.json(surveys)
-});
-
-router.get('/:id', (req, res) => {
-    const survey = surveys.find(s => s.id === req.params.id)
-    res.json(survey)
-});
+router.route("/").get(getSurveys).post(createSurvey);
+router.route("/:id").get(getSurveyById);
 
 export default router;

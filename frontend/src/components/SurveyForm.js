@@ -48,8 +48,14 @@ const SurveyForm = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
+    const config = {
+      headers: {
+          'Content-Type': 'application/json',
+      }
+  }
+
     const newSurvey = {
-      id: Math.floor(Math.random()),
+      // id: Math.floor(Math.random() * 10000) + 1,
       name: name,
       email: email,
       age: age,
@@ -60,7 +66,10 @@ const SurveyForm = () => {
       pageToEdit: myUrl,
     };
 
+    const {data} = await axios.post('/api/surveys', {survey: newSurvey}, config);
+
     console.log(`Button clicked, came from ${pageToEdit}, survey: `, newSurvey);
+    console.log(`Created survey: `, data);
     navigate("/thank-you", { state: myUrl });
   };
 
@@ -119,7 +128,7 @@ const SurveyForm = () => {
             { name: "other", label: "Other" },
           ]}
           value={gender}
-          placeholder="Select Gender"
+          placeholder="Please select gender"
           onChange={handleGender}
         />
         <SelectOption
@@ -132,11 +141,11 @@ const SurveyForm = () => {
         <SelectOption
           label="Experience rating: "
           data={[
-            { name: 1, optionLabel: "1" },
-            { name: 2, optionLabel: "2" },
-            { name: 3, optionLabel: "3" },
-            { name: 4, optionLabel: "4" },
-            { name: 5, optionLabel: "5" },
+            { name: 1, label: "1" },
+            { name: 2, label: "2" },
+            { name: 3, label: "3" },
+            { name: 4, label: "4" },
+            { name: 5, label: "5" },
           ]}
           value={experience}
           placeholder="Select experience rating"
