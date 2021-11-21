@@ -103,7 +103,7 @@ const SurveySummaryScreen = () => {
           // surveys.map((survey) => <h1 key={survey.id}>{survey.name}</h1>)
         )}
 
-        <SurveyLink buttonName="Take Survey" />
+        <SurveyLink buttonName="Page Edit Suggestion" />
       </div>
     </div>
   );

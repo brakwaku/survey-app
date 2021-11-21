@@ -5,7 +5,7 @@ const GenealogyScreen = () => {
     return (
         <div className='container'>
             <h1>This is the GENEALOGY Screen</h1>
-            <SurveyLink buttonName='Take Survey' />
+            <SurveyLink buttonName='Page Edit Suggestion' />
         </div>
     )
 }

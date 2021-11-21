@@ -10,7 +10,7 @@ const HomeScreen = () => {
   return (
     <div>
       <h1>This Is My Home</h1>
-      <SurveyLink buttonName='Take Survey' />
+      <SurveyLink buttonName='Page Edit Suggestion' />
     </div>
   );
 };

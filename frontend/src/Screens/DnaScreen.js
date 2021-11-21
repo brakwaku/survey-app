@@ -5,7 +5,7 @@ const DnaScreen = () => {
     return (
         <div className='container'>
             <h1>This is the DNA Screen</h1>
-            <SurveyLink buttonName='Take Survey' />
+            <SurveyLink buttonName='Page Edit Suggestion' />
         </div>
     )
 }
