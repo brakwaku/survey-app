@@ -22,7 +22,7 @@ const SurveySummaryScreen = () => {
           <h1 key={survey.id}>{survey.name}</h1>
           )))}
 
-        <SurveyLink />
+        <SurveyLink buttonName='Take Survey' />
     </div>
   );
 };

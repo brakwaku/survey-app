@@ -12,7 +12,7 @@ const LabelWrapper = styled.label`
   display: block;
 `;
 
-const SelectOption = ({value, data, placeholder, label, optionLabel, onChange}) => {
+const SelectOption = ({value, data, placeholder, label, onChange}) => {
 
     const handleChange = (event) => {
         const {value} = event.target;
@@ -27,10 +27,8 @@ const SelectOption = ({value, data, placeholder, label, optionLabel, onChange}) 
                 onChange={handleChange}>
                 <option value="">{placeholder}</option>
                 {data.map((item, key) => (
-                    <option
-                        key={key}
-                        value={item.value}>
-                        {item.optionLabel}
+                    <option key={key} value={item.name}>
+                        {item.name}
                     </option>
                 ))}
             </SelectWrapper>

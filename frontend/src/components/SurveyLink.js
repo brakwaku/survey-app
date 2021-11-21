@@ -24,7 +24,6 @@ const SurveyLink = ({ buttonName }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("The url: ", myUrl);
     navigate("/survey", {state: myUrl});
   };
   return (

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { validators } from "../utilities/Validator";
@@ -16,7 +17,7 @@ const ButtonWrapper = styled.button`
   border: none;
 
   &:hover {
-    background: #005C7D;
+    background: #005c7d;
   }
 `;
 
@@ -29,10 +30,20 @@ const SurveyForm = () => {
   const [experience, setExperience] = useState("");
   const [suggestion, setSuggestion] = useState("");
   const [pageToEdit, setPageToEdit] = useState("");
+  const [countries, setCountries] = useState([]);
 
   const navigate = useNavigate();
   const location = useLocation();
   const myUrl = location.state;
+
+  useEffect(() => {
+    const getCountries = async () => {
+      const { data } = await axios.get("https://restcountries.com/v2/all");
+      setCountries(data);
+    };
+
+    getCountries();
+  }, []);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -46,11 +57,11 @@ const SurveyForm = () => {
       country: country,
       experience: experience,
       suggestion: suggestion,
-      pageToEdit: pageToEdit,
+      pageToEdit: myUrl,
     };
 
-    console.log("Button clicked", newSurvey);
-    navigate("/thank-you", {state: myUrl});
+    console.log(`Button clicked, came from ${pageToEdit}, survey: `, newSurvey);
+    navigate("/thank-you", { state: myUrl });
   };
 
   const handleName = (name) => setName(name);
@@ -103,9 +114,9 @@ const SurveyForm = () => {
         <SelectOption
           label="Gender: "
           data={[
-            { value: 1, optionLabel: "Male" },
-            { value: 2, optionLabel: "Female" },
-            { value: 3, optionLabel: "Other" },
+            { name: "male", label: "Male" },
+            { name: "female", label: "Female" },
+            { name: "other", label: "Other" },
           ]}
           value={gender}
           placeholder="Select Gender"
@@ -113,23 +124,19 @@ const SurveyForm = () => {
         />
         <SelectOption
           label="Country: "
-          data={[
-            { value: 1, optionLabel: "Male" },
-            { value: 2, optionLabel: "Female" },
-            { value: 3, optionLabel: "Other" },
-          ]}
+          data={countries}
           value={country}
           placeholder="Select Country"
           onChange={handleCountry}
         />
         <SelectOption
-          label="Experience: "
+          label="Experience rating: "
           data={[
-            { value: 1, optionLabel: "1" },
-            { value: 2, optionLabel: "2" },
-            { value: 3, optionLabel: "3" },
-            { value: 4, optionLabel: "4" },
-            { value: 5, optionLabel: "5" },
+            { name: 1, optionLabel: "1" },
+            { name: 2, optionLabel: "2" },
+            { name: 3, optionLabel: "3" },
+            { name: 4, optionLabel: "4" },
+            { name: 5, optionLabel: "5" },
           ]}
           value={experience}
           placeholder="Select experience rating"
@@ -144,8 +151,6 @@ const SurveyForm = () => {
         />
         <input
           type="text"
-          id="previousLink"
-          name="previousLink"
           defaultValue={location.state}
           hidden
           onLoad={(e) => {
