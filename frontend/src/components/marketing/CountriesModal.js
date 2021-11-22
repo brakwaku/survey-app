@@ -1,6 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+const ButtonWrapper = styled.button`
+  background: #0079a3;
+  font-weight: bold;
+
+  &:hover {
+      background: #005c7d;
+    }
+`;
+
+
 const CountryListWrapper = styled.div`
   background: #6ba410;
   display: flex;
@@ -23,14 +33,14 @@ const CountryListWrapper = styled.div`
 const CountriesModal = ({ countries }) => {
   return (
     <>
-      <button
+      <ButtonWrapper
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#Mylargemodal"
       >
         View distribution
-      </button>
+      </ButtonWrapper>
       <div
         className="modal fade"
         id="Mylargemodal"

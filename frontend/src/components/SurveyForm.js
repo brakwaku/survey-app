@@ -114,7 +114,7 @@ const SurveyForm = () => {
         />
         <InputField
           value={age}
-          label="Age: "
+          label="Age (Must be a number): "
           placeholder="Please enter your age in years"
           type="number"
           validators={[

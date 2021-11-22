@@ -9,8 +9,8 @@ import CountriesModal from "../components/marketing/CountriesModal";
 
 const MainWrapper = styled.div`
   justify-content: center;
-  margin: auto;
-  height: 90vh;
+  margin: 0 auto 0 auto;
+  min-height: 90vh;
 `;
 
 const GridWrapper = styled.div`
@@ -18,6 +18,7 @@ const GridWrapper = styled.div`
   grid-template-columns: auto auto;
   padding: 1.6rem;
   width: 80%;
+  margin: 0 auto 0 auto;
 
   ${media.small`
     display: flex;
@@ -28,6 +29,7 @@ const GridWrapper = styled.div`
 
 const HeadingWrapper = styled.div`
   width: 80%;
+  margin: 0 auto 0 auto;
 
   ${media.small`
     width: 100%;
@@ -76,21 +78,21 @@ const SurveySummaryScreen = () => {
 
             <GridWrapper>
               <SummaryItem color="blue">
-                <h5>Average Age</h5>
+                <h5>Average Age</h5><hr/>
                 <h4>{averageAge}</h4>
               </SummaryItem>
               <SummaryItem color="green">
-                <h5>Average Rating</h5>
+                <h5>Average Rating</h5><hr/>
                 <h4>{averageRating}</h4>
               </SummaryItem>
               <SummaryItem color="green">
-                <h5>Gender Distribution</h5>
+                <h5>Gender Distribution</h5><hr/>
                 <h4>Male: {maleCount}</h4>
                 <h4>Female: {femaleCount}</h4>
                 <h4>Other: {otherCount}</h4>
               </SummaryItem>
               <SummaryItem color="footer">
-                <h5>Country Distribution</h5>
+                <h5>Country Distribution</h5><hr/>
                 <CountriesModal countries={countries} />
               </SummaryItem>
             </GridWrapper>

@@ -16,10 +16,10 @@ const ThankyouScreen = () => {
   const myUrl = location.state;
 
   return (
-    <MainWrapper style={{ height: 90 + "vh" }} className="container">
+    <MainWrapper style={{ minHeight: 90 + "vh" }} className="container">
       <h1>Thank you very much for your feedback.</h1>
       <p>
-        Your response was submitted successfully. <a href={myUrl}>Return to previous page</a> and continue browsing or
+        Your response was submitted successfully. <a href={myUrl === '' ? '/' : myUrl}>Return to previous page</a> and continue browsing or
         close tab to exit. Thank you
       </p>
     </MainWrapper>

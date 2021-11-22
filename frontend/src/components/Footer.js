@@ -45,27 +45,26 @@ const ColWrapper = styled.div`
 `;
 
 const BelowMainWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 0 auto 0 auto;
   justify-content: center;
 
   ${media.small`
-    width: 100%;
     text-align: center;
   `}
 
   > div:nth-child(1) {
     display: flex;
     flex-direction: row;
-    gap: 20rem;
+    gap: 16rem;
     color: #36322d;
     font-size: 0.84rem;
-    margin-bottom: 1.6rem;
+    margin: 0 auto 1.6rem auto;
+    justify-content: center;
 
     ${media.small`
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
     text-align: center;
   `}
   }
@@ -73,7 +72,8 @@ const BelowMainWrapper = styled.div`
   > div > div:nth-child(1) {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: .6rem;
 
     ${media.small`
     flex-wrap: wrap;
@@ -104,6 +104,9 @@ const BelowMainWrapper = styled.div`
     gap: 0.5rem;
     color: #36322d;
     font-size: 0.7rem;
+    margin: 0 auto 0 auto;
+    justify-content: center;
+    text-align: left;
 
     ${media.small`
     flex-wrap: wrap;

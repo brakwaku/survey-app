@@ -1,15 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import media from "../utilities/media";
 
 const LinkWrapper = styled.form`
   display: block;
   margin: 2rem;
 
+  ${media.small`
+    width: 100%;
+  `}
+
   > button {
     background: #6ba410;
     color: white;
     border: none;
+    font-weight: bold;
 
     &:hover {
       background: #42860e;
@@ -25,7 +31,7 @@ const SurveyLink = ({ buttonName }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    navigate("/survey", {state: myUrl});
+    navigate("/survey", { state: myUrl });
   };
   return (
     <LinkWrapper onSubmit={onSubmit}>

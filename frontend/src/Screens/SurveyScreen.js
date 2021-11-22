@@ -18,7 +18,7 @@ const MainWrapper = styled.div`
 
 const SurveyScreen = () => {
   return (
-    <div style={{ height: 90 + "vh" }}  className="container">
+    <div style={{ minHeight: 90 + "vh" }}  className="container">
       <MainWrapper>
         <h1>Page Edit Suggestion</h1>
         <hr/>

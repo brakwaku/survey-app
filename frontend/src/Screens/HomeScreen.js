@@ -3,13 +3,18 @@ import styled from "styled-components";
 import SurveyLink from "../components/SurveyLink";
 import backgroundImage from "../assets/descendants.jpg";
 
+const ButtonWrapper = styled.div`
+  width: 100%;
+  padding-top: 60vh;
+`;
+
 const MainWrapper = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url(${backgroundImage});
   background-color: #cccccc;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  min-height: 90vh;
   padding: 2rem;
 
   > div > h1 {
@@ -23,9 +28,9 @@ const HomeScreen = () => {
     <MainWrapper>
       <div className="container">
         <h1>This Is My Home</h1>
-        <div>
+        <ButtonWrapper>
           <SurveyLink buttonName="Page Edit Suggestion" />
-        </div>
+        </ButtonWrapper>
       </div>
     </MainWrapper>
   );
