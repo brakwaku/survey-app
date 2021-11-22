@@ -8,6 +8,10 @@ const ButtonWrapper = styled.button`
   &:hover {
       background: #005c7d;
     }
+
+  &:focus {
+      background: #005c7d;
+    }
 `;
 
 
@@ -69,13 +73,13 @@ const CountriesModal = ({ countries }) => {
               ))}
             </div>
             <div className="modal-footer">
-              <button
+              <ButtonWrapper
                 type="button"
                 className="btn btn-primary"
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
+              </ButtonWrapper>
               {/* <button type="button" className="btn btn-primary">
                 Save changes
               </button> */}
