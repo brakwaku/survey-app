@@ -6,6 +6,7 @@ const SelectWrapper = styled.select`
   margin: 0 0 1rem 0;
   border-radius: 5px;
   height: 2.5rem;
+  width: 100%;
 `;
 
 const LabelWrapper = styled.label`

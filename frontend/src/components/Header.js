@@ -5,6 +5,10 @@ const NavWrapper = styled.header`
   nav > div > div > div > a {
     color: #005c7d !important;
   }
+
+  > nav {
+    padding: .2rem !important;
+  }
 `;
 
 const Header = () => {
@@ -16,7 +20,7 @@ const Header = () => {
             <img
               alt="logo"
               src="//cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/global-header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.svg/1626203683654/ancestry.svg"
-              height="26"
+              height="33"
               className="d-inline-block align-text-top"
             />
           </a>

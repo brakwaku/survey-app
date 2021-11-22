@@ -7,7 +7,9 @@ import InputField from "./InputField";
 import SelectOption from "./SelectOption";
 
 const SurveyContentWrapper = styled.div`
-  /* background: #141d25; */
+  > form {
+    margin: 0 auto 0 auto;
+  }
 `;
 
 const ButtonWrapper = styled.button`
@@ -135,7 +137,7 @@ const SurveyForm = () => {
           label="Country: "
           data={countries}
           value={country}
-          placeholder="Select Country"
+          placeholder="Please select country"
           onChange={handleCountry}
         />
         <SelectOption

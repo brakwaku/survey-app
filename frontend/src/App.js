@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="container">
+      <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} exact />
           <Route path="/survey" element={<SurveyScreen />} />

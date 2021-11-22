@@ -8,14 +8,14 @@ const LabelWrapper = styled.label`
 `;
 
 const InputWrapper = styled.input`
-  width: 80%;
+  width: 100%;
   margin: 0 auto 1rem auto;
   border-radius: 5px;
   height: 2.5rem;
 `;
 
 const InputTextAreaWrapper = styled.textarea`
-  width: 80%;
+  width: 100%;
   margin: 0 auto 1rem auto;
   border-radius: 5px;
 `;

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const LinkWrapper = styled.form`
   display: block;
+  margin: 2rem;
 
   > button {
     background: #6ba410;

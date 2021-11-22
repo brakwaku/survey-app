@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import SurveyLink from "../components/SurveyLink";
 
 const DnaScreen = () => {
-    return (
-        <div className='container'>
-            <h1>This is the DNA Screen</h1>
-            <SurveyLink buttonName='Page Edit Suggestion' />
-        </div>
-    )
-}
+  return (
+    <div className="container">
+      <div style={{ height: 80 + "vh" }}>
+        <h1>This is the DNA Link Page</h1>
+      </div>
+      <SurveyLink buttonName="Page Edit Suggestion" />
+    </div>
+  );
+};
 
-export default DnaScreen
+export default DnaScreen;
