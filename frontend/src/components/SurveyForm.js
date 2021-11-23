@@ -95,7 +95,7 @@ const SurveyForm = () => {
       <form onSubmit={submitHandler}>
         <InputField
           value={name}
-          label="Name: "
+          label="Full Name: "
           placeholder="Please enter your full name"
           type="text"
           required
@@ -121,7 +121,7 @@ const SurveyForm = () => {
         />
         <InputField
           value={age}
-          label="Age (Must be a number): "
+          label="Age in years (Must be a number): "
           placeholder="Please enter your age in years"
           type="number"
           validators={[
@@ -148,7 +148,7 @@ const SurveyForm = () => {
           onChange={handleCountry}
         />
         <SelectOption
-          label="Experience rating: "
+          label="Your experience rating: "
           data={[
             { name: 1, label: "1" },
             { name: 2, label: "2" },
@@ -162,7 +162,7 @@ const SurveyForm = () => {
         />
         <InputField
           value={suggestion}
-          label="Suggestion: "
+          label="Your Suggestion: "
           placeholder="Please enter your suggestions here"
           type="textarea"
           onChange={handleSuggestion}
