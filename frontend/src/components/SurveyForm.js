@@ -52,9 +52,9 @@ const SurveyForm = () => {
 
     const config = {
       headers: {
-          'Content-Type': 'application/json',
-      }
-  }
+        "Content-Type": "application/json",
+      },
+    };
 
     const newSurvey = {
       // id: Math.floor(Math.random() * 10000) + 1,
@@ -68,11 +68,18 @@ const SurveyForm = () => {
       pageToEdit: myUrl,
     };
 
-    const {data} = await axios.post('/api/surveys', {survey: newSurvey}, config);
 
+    // const something = await axios.post("/api/surveys", { survey: newSurvey }, config );
+    const { status } = await axios.post("/api/surveys", { survey: newSurvey }, config );
+
+    // console.log(`Button clicked, came from ${pageToEdit}, survey: `, something);
     console.log(`Button clicked, came from ${pageToEdit}, survey: `, newSurvey);
-    console.log(`Created survey: `, data);
-    navigate("/thank-you", { state: myUrl });
+
+    if (status !== 201) {
+      navigate("/500");
+    } else {
+      navigate("/thank-you", { state: myUrl });
+    }
   };
 
   const handleName = (name) => setName(name);

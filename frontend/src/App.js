@@ -7,6 +7,8 @@ import SurveySummaryScreen from "./Screens/SurveySummaryScreen";
 import ThankyouScreen from "./Screens/ThankyouScreen";
 import GenealogyScreen from "./Screens/GenealogyScreen";
 import DnaScreen from "./Screens/DnaScreen";
+import NotFoundScreen from "./Screens/NotFoundScreen";
+import InternalErrorScreen from "./Screens/InternalErrorScreen";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/thank-you" element={<ThankyouScreen />} />
           <Route path="/genealogy" element={<GenealogyScreen />} />
           <Route path="/dna" element={<DnaScreen />} />
+          <Route path="/500" element={<InternalErrorScreen />} />
+          <Route path='*' element={<NotFoundScreen />} />
         </Routes>
       </main>
       <Footer />

@@ -78,7 +78,7 @@ const getSurveys = asyncHandler(async (req, res) => {
     };
   } //End of CompareValues function
 
-  tempCountries.sort(compareValues('count', 'desc'))
+  tempCountries.sort(compareValues("count", "desc"));
 
   const data = {
     calc: {
@@ -125,19 +125,25 @@ const createSurvey = asyncHandler(async (req, res) => {
     pageToEdit,
   } = req.body.survey;
 
-  const survey = new Survey({
-    name: name,
-    email: email,
-    age: age,
-    gender: gender,
-    country: country,
-    experience: experience,
-    suggestion: suggestion,
-    pageToEdit: pageToEdit,
-  });
+  try {
+    const survey = new Survey({
+      name: name,
+      email: email,
+      age: age,
+      gender: gender,
+      country: country,
+      experience: experience,
+      suggestion: suggestion,
+      pageToEdit: pageToEdit,
+    });
 
-  const createdSurvey = await survey.save();
-  res.status(201).json(createdSurvey);
+    const createdSurvey = await survey.save();
+    res.status(201).json(createdSurvey);
+
+  } catch (error) {
+    res.json(error);
+    throw new Error("No survey data found for ID");
+  }
 });
 
 export { getSurveys, getSurveyById, createSurvey };
