@@ -6,6 +6,7 @@ import SummaryHeader from "../components/marketing/SummaryHeader";
 import SummaryItem from "../components/marketing/SummaryItem";
 import media from "../utilities/media";
 import CountriesModal from "../components/marketing/CountriesModal";
+import PieCharf from "../components/marketing/PieCharf";
 
 const MainWrapper = styled.div`
   justify-content: center;
@@ -17,10 +18,10 @@ const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   padding: 1.6rem;
-  width: 80%;
+  width: 95%;
   margin: 0 auto 0 auto;
 
-  ${media.small`
+  ${media.medium`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -28,36 +29,30 @@ const GridWrapper = styled.div`
 `;
 
 const HeadingWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto 0 auto;
+  width: 95%;
+  margin: .7rem auto 0 auto;
 
-  ${media.small`
+  ${media.medium`
     width: 100%;
     margin-top: 1rem;
   `}
 `;
 
 const SurveySummaryScreen = () => {
-  // const [surveys, setSurveys] = useState([]);
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(0);
   const [averageRating, setAverageRating] = useState(0);
   const [averageAge, setAverageAge] = useState(0);
-  const [maleCount, setMaleCount] = useState(0);
-  const [femaleCount, setFemaleCount] = useState(0);
-  const [otherCount, setOtherCount] = useState(0);
   const [countries, setCountries] = useState({});
+  const [genderData, setGenderData] = useState({});
 
   useEffect(() => {
     const fetchSurveys = async () => {
       const { data } = await axios.get("/api/surveys");
-      // setSurveys(data.surveys);
       setTotal(data.calc.total);
       setAverageRating(data.calc.averageRating);
       setAverageAge(data.calc.averageAge);
-      setMaleCount(data.calc.maleCount);
-      setFemaleCount(data.calc.femaleCount);
-      setOtherCount(data.calc.otherCount);
+      setGenderData(data.calc.gender);
       setCountries(data.calc.countries);
 
       setLoading(false);
@@ -79,21 +74,23 @@ const SurveySummaryScreen = () => {
             <GridWrapper>
               <SummaryItem color="blue">
                 <h5>Average Age</h5><hr/>
-                <h4>{averageAge}</h4>
+                <h4>{averageAge} years</h4>
               </SummaryItem>
               <SummaryItem color="green">
                 <h5>Average Rating</h5><hr/>
-                <h4>{averageRating}</h4>
+                <h4>{averageRating} / 5</h4>
               </SummaryItem>
               <SummaryItem color="green">
-                <h5>Gender Distribution</h5><hr/>
-                <h4>Male: {maleCount}</h4>
-                <h4>Female: {femaleCount}</h4>
-                <h4>Other: {otherCount}</h4>
+              <h5>Gender Distribution</h5><hr/>
+                {/* {genderData.map((gender, key) => (
+                  <h4 key={key}>{gender.name[0].toUpperCase() + gender.name.substring(1)}: {gender.count}</h4>
+                ))} */}
+                <PieCharf data={genderData} chartType='doughnut' labelColor='white' canvasId='genderChart'/>
               </SummaryItem>
               <SummaryItem color="footer">
                 <h5>Country Distribution</h5><hr/>
                 <CountriesModal countries={countries} />
+                <PieCharf data={countries} chartType='bar' graphTitle='Country Distribution' labelColor='black' canvasId='countriesChart'/>
               </SummaryItem>
             </GridWrapper>
           </>

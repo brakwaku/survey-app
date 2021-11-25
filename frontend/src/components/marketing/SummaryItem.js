@@ -15,11 +15,12 @@ const handleColorType = (color) => {
 };
 
 const SummaryItem = styled.div`
+  position: relative;
   padding: 1.5rem;
   border: 1px solid #6ba410;
   ${({ color }) => handleColorType(color)};
 
-  ${media.small`
+  ${media.medium`
     margin-bottom: .6rem;
   `}
 `;
