@@ -3,11 +3,10 @@ import styled from "styled-components";
 import media from "../utilities/media";
 
 const MainWrapper = styled.div`
-  width: 80%;
   display: flex;
   flex-direction: row;
   gap: 4rem;
-  padding: 0 0 1.6rem 0;
+  padding: 1.7rem 0 1.6rem 0;
   margin: 0 auto 0 auto;
   justify-content: center;
 
@@ -45,40 +44,47 @@ const ColWrapper = styled.div`
 `;
 
 const BelowMainWrapper = styled.div`
+  background: #ececec;
   width: 100%;
   margin: 0 auto 0 auto;
+  padding: 1rem 0 .5rem 0;
   justify-content: center;
 
   ${media.small`
     text-align: center;
   `}
 
-  > div:nth-child(1) {
-    display: flex;
-    flex-direction: row;
-    gap: 16rem;
-    color: #36322d;
-    font-size: 0.84rem;
+  > div {
     margin: 0 auto 1.6rem auto;
-    justify-content: center;
-
-    ${media.small`
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  `}
+    width: 80%;
   }
 
   > div > div:nth-child(1) {
     display: flex;
     flex-direction: row;
+    gap: 16rem;
+    color: #36322d;
+    font-size: 0.84rem;
+    margin: 0 0 1.6rem 0;
+    /* justify-content: center; */
+
+    ${media.small`
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    `}
+  }
+
+  > div > div > div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: .6rem;
+    gap: 0.6rem;
 
     ${media.small`
     flex-wrap: wrap;
     text-align: center;
-  `}
+    `}
 
     > a {
       text-decoration: none;
@@ -89,7 +95,7 @@ const BelowMainWrapper = styled.div`
       font-size: 0.7rem;
         text-align: center;
         flex-wrap: wrap;
-  `}
+      `}
 
       &:hover {
         color: #238aad;
@@ -98,20 +104,18 @@ const BelowMainWrapper = styled.div`
     }
   }
 
-  > div:nth-child(2) {
+  > div > div:nth-child(2) {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
     color: #36322d;
     font-size: 0.7rem;
-    margin: 0 auto 0 auto;
-    justify-content: center;
     text-align: left;
 
     ${media.small`
     flex-wrap: wrap;
     text-align: center;
-  `}
+    `}
 
     > span {
       text-decoration: none;
@@ -134,7 +138,7 @@ const BelowMainWrapper = styled.div`
 
 const Footer = () => {
   return (
-    <footer style={{ background: "#F0EEE9", padding: "1.7rem" }}>
+    <footer style={{ background: "#F0EEE9"}}>
       <MainWrapper>
         <ColWrapper>
           <h6>Genealogy Resources</h6>
@@ -161,28 +165,30 @@ const Footer = () => {
       <BelowMainWrapper>
         <div>
           <div>
-            <a href="/">Support Center</a>
-            <a href="/">Ancestry Blog</a>
-            <a href="/">Site Map</a>
-            <a href="/">Gift Memberships</a>
-            <a href="/">Careers</a>
+            <div>
+              <a href="/">Support Center</a>
+              <a href="/">Ancestry Blog</a>
+              <a href="/">Site Map</a>
+              <a href="/">Gift Memberships</a>
+              <a href="/">Careers</a>
+            </div>
+            <div>
+              <label>Visit our other sites: &#8194;</label>
+              <select>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada (English)</option>
+              </select>
+            </div>
           </div>
           <div>
-            <label>Visit our other sites: &#8194;</label>
-            <select>
-              <option>United States</option>
-              <option>United Kingdom</option>
-              <option>Canada (English)</option>
-            </select>
+            <span href="/">© 1997-2021 Ancestry</span> &#8729;
+            <a href="/">Corporate Information</a> &#8729;
+            <a href="/">Privacy</a> &#8729;
+            <a href="/">Terms and Conditions</a> &#8729;
+            <a href="/">CCPA Notice at Collection</a> &#8729;
+            <a href="/">Patent</a>
           </div>
-        </div>
-        <div>
-          <span href="/">© 1997-2021 Ancestry</span> &#8729;
-          <a href="/">Corporate Information</a> &#8729;
-          <a href="/">Privacy</a> &#8729;
-          <a href="/">Terms and Conditions</a> &#8729;
-          <a href="/">CCPA Notice at Collection</a> &#8729;
-          <a href="/">Patent</a>
         </div>
       </BelowMainWrapper>
     </footer>
