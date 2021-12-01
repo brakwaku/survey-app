@@ -86,13 +86,10 @@ const getSurveys = asyncHandler(async (req, res) => {
       averageRating: (tempRating / total).toFixed(2),
       countries: tempCountries,
       gender: [
-        {name: 'male', count: maleCount},
-        {name: 'female', count: femaleCount},
-        {name: 'other', count: otherCount},
-    ],
-      // maleCount,
-      // femaleCount,
-      // otherCount,
+        { name: "male", count: maleCount },
+        { name: "female", count: femaleCount },
+        { name: "other", count: otherCount },
+      ],
       total,
     },
     surveys,
@@ -144,7 +141,6 @@ const createSurvey = asyncHandler(async (req, res) => {
 
     const createdSurvey = await survey.save();
     res.status(201).json(createdSurvey);
-
   } catch (error) {
     res.json(error);
     throw new Error("No survey data found for ID");

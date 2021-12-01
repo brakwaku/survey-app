@@ -66,7 +66,6 @@ const BelowMainWrapper = styled.div`
     color: #36322d;
     font-size: 0.84rem;
     margin: 0 0 1.6rem 0;
-    /* justify-content: center; */
 
     ${media.small`
     flex-direction: column;

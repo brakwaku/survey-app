@@ -25,7 +25,6 @@ const LinkWrapper = styled.form`
 
 const SurveyLink = ({ buttonName }) => {
   const myUrl = window.location.pathname;
-  //   const myUrl = window.location.href;
 
   const navigate = useNavigate();
 

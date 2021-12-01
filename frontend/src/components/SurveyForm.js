@@ -69,10 +69,8 @@ const SurveyForm = () => {
     };
 
 
-    // const something = await axios.post("/api/surveys", { survey: newSurvey }, config );
     const { status } = await axios.post("/api/surveys", { survey: newSurvey }, config );
 
-    // console.log(`Button clicked, came from ${pageToEdit}, survey: `, something);
     console.log(`Button clicked, came from ${pageToEdit}, survey: `, newSurvey);
 
     if (status !== 201) {

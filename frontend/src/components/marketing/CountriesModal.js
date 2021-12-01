@@ -80,9 +80,6 @@ const CountriesModal = ({ countries }) => {
               >
                 Close
               </ButtonWrapper>
-              {/* <button type="button" className="btn btn-primary">
-                Save changes
-              </button> */}
             </div>
           </div>
         </div>
