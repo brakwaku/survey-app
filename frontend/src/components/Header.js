@@ -1,16 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const NavWrapper = styled.header`
-  nav > div > div > div > a {
-    color: #005c7d !important;
-  }
-
-  > nav {
-    padding: .2rem !important;
-  }
-`;
-
 const Header = () => {
   return (
     <NavWrapper>
@@ -58,3 +48,14 @@ const Header = () => {
 };
 
 export default Header;
+
+
+const NavWrapper = styled.header`
+  nav > div > div > div > a {
+    color: #005c7d !important;
+  }
+
+  > nav {
+    padding: .2rem !important;
+  }
+`;

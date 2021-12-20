@@ -3,6 +3,21 @@ import styled from "styled-components";
 import SurveyLink from "../components/SurveyLink";
 import backgroundImage from "../assets/descendants.jpg";
 
+const HomeScreen = () => {
+  return (
+    <MainWrapper>
+      <div className="container">
+        <h1>This Is My Home</h1>
+        <ButtonWrapper>
+          <SurveyLink buttonName="Page Edit Suggestion" />
+        </ButtonWrapper>
+      </div>
+    </MainWrapper>
+  );
+};
+
+export default HomeScreen;
+
 const ButtonWrapper = styled.div`
   width: 100%;
   padding-top: 60vh;
@@ -22,18 +37,3 @@ const MainWrapper = styled.div`
     font-weight: bold;
   }
 `;
-
-const HomeScreen = () => {
-  return (
-    <MainWrapper>
-      <div className="container">
-        <h1>This Is My Home</h1>
-        <ButtonWrapper>
-          <SurveyLink buttonName="Page Edit Suggestion" />
-        </ButtonWrapper>
-      </div>
-    </MainWrapper>
-  );
-};
-
-export default HomeScreen;

@@ -2,6 +2,67 @@ import React from "react";
 import styled from "styled-components";
 import media from "../utilities/media";
 
+const Footer = () => {
+  return (
+    <footer style={{ background: "#F0EEE9"}}>
+      <MainWrapper>
+        <ColWrapper>
+          <h6>Genealogy Resources</h6>
+          <a href="/">Surname Meanings</a>
+          <a href="/">Historical Person Search</a>
+          <a href="/">Genealogy</a>
+          <a href="/">Obituaries</a>
+          <a href="/">Women's Suffrage</a>
+        </ColWrapper>
+        <ColWrapper>
+          <h6>Historical Collections</h6>
+          <a href="/">Vital Records</a>
+          <a href="/">Search Public Trees</a>
+          <a href="/">Military Records</a>
+          <a href="/">All Records</a>
+        </ColWrapper>
+        <ColWrapper>
+          <h6>Family Trees</h6>
+          <a href="/">Create a Family Tree</a>
+          <a href="/">Pedigree Charts</a>
+          <a href="/">Search Public Trees</a>
+        </ColWrapper>
+      </MainWrapper>
+      <BelowMainWrapper>
+        <div>
+          <div>
+            <div>
+              <a href="/">Support Center</a>
+              <a href="/">Ancestry Blog</a>
+              <a href="/">Site Map</a>
+              <a href="/">Gift Memberships</a>
+              <a href="/">Careers</a>
+            </div>
+            <div>
+              <label>Visit our other sites: &#8194;</label>
+              <select>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada (English)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <span href="/">© 1997-2021 Ancestry</span> &#8729;
+            <a href="/">Corporate Information</a> &#8729;
+            <a href="/">Privacy</a> &#8729;
+            <a href="/">Terms and Conditions</a> &#8729;
+            <a href="/">CCPA Notice at Collection</a> &#8729;
+            <a href="/">Patent</a>
+          </div>
+        </div>
+      </BelowMainWrapper>
+    </footer>
+  );
+};
+
+export default Footer;
+
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -134,64 +195,3 @@ const BelowMainWrapper = styled.div`
     }
   }
 `;
-
-const Footer = () => {
-  return (
-    <footer style={{ background: "#F0EEE9"}}>
-      <MainWrapper>
-        <ColWrapper>
-          <h6>Genealogy Resources</h6>
-          <a href="/">Surname Meanings</a>
-          <a href="/">Historical Person Search</a>
-          <a href="/">Genealogy</a>
-          <a href="/">Obituaries</a>
-          <a href="/">Women's Suffrage</a>
-        </ColWrapper>
-        <ColWrapper>
-          <h6>Historical Collections</h6>
-          <a href="/">Vital Records</a>
-          <a href="/">Search Public Trees</a>
-          <a href="/">Military Records</a>
-          <a href="/">All Records</a>
-        </ColWrapper>
-        <ColWrapper>
-          <h6>Family Trees</h6>
-          <a href="/">Create a Family Tree</a>
-          <a href="/">Pedigree Charts</a>
-          <a href="/">Search Public Trees</a>
-        </ColWrapper>
-      </MainWrapper>
-      <BelowMainWrapper>
-        <div>
-          <div>
-            <div>
-              <a href="/">Support Center</a>
-              <a href="/">Ancestry Blog</a>
-              <a href="/">Site Map</a>
-              <a href="/">Gift Memberships</a>
-              <a href="/">Careers</a>
-            </div>
-            <div>
-              <label>Visit our other sites: &#8194;</label>
-              <select>
-                <option>United States</option>
-                <option>United Kingdom</option>
-                <option>Canada (English)</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <span href="/">© 1997-2021 Ancestry</span> &#8729;
-            <a href="/">Corporate Information</a> &#8729;
-            <a href="/">Privacy</a> &#8729;
-            <a href="/">Terms and Conditions</a> &#8729;
-            <a href="/">CCPA Notice at Collection</a> &#8729;
-            <a href="/">Patent</a>
-          </div>
-        </div>
-      </BelowMainWrapper>
-    </footer>
-  );
-};
-
-export default Footer;

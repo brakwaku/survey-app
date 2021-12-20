@@ -3,28 +3,6 @@ import PropTypes from "prop-types";
 import { validateInput } from "../utilities/Validator";
 import styled from "styled-components";
 
-const LabelWrapper = styled.label`
-  display: block;
-`;
-
-const InputWrapper = styled.input`
-  width: 100%;
-  margin: 0 auto 1rem auto;
-  border-radius: 5px;
-  height: 2.5rem;
-`;
-
-const InputTextAreaWrapper = styled.textarea`
-  width: 100%;
-  margin: 0 auto 1rem auto;
-  border-radius: 5px;
-`;
-
-const ErrorMessageWrapper = styled.span`
-  display: inline-block;
-  color: red;
-`;
-
 const InputField = ({
   value,
   label,
@@ -84,3 +62,26 @@ InputField.defaultProps = {
 };
 
 export default InputField;
+
+
+const LabelWrapper = styled.label`
+  display: block;
+`;
+
+const InputWrapper = styled.input`
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  border-radius: 5px;
+  height: 2.5rem;
+`;
+
+const InputTextAreaWrapper = styled.textarea`
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  border-radius: 5px;
+`;
+
+const ErrorMessageWrapper = styled.span`
+  display: inline-block;
+  color: red;
+`;

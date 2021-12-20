@@ -2,15 +2,6 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-const MainWrapper = styled.div`
-  text-align: center;
-  padding-top: 35vh;
-
-  > h1 {
-      color: #6ba410;
-  }
-`;
-
 const ThankyouScreen = () => {
   const location = useLocation();
   const myUrl = location.state;
@@ -27,3 +18,12 @@ const ThankyouScreen = () => {
 };
 
 export default ThankyouScreen;
+
+const MainWrapper = styled.div`
+  text-align: center;
+  padding-top: 35vh;
+
+  > h1 {
+      color: #6ba410;
+  }
+`;

@@ -6,23 +6,6 @@ import { validators } from "../utilities/Validator";
 import InputField from "./InputField";
 import SelectOption from "./SelectOption";
 
-const SurveyContentWrapper = styled.div`
-  > form {
-    margin: 0 auto 0 auto;
-  }
-`;
-
-const ButtonWrapper = styled.button`
-  display: block;
-  background: #0079a3;
-  color: white;
-  border: none;
-
-  &:hover {
-    background: #005c7d;
-  }
-`;
-
 const SurveyForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -183,3 +166,21 @@ const SurveyForm = () => {
 };
 
 export default SurveyForm;
+
+
+const SurveyContentWrapper = styled.div`
+  > form {
+    margin: 0 auto 0 auto;
+  }
+`;
+
+const ButtonWrapper = styled.button`
+  display: block;
+  background: #0079a3;
+  color: white;
+  border: none;
+
+  &:hover {
+    background: #005c7d;
+  }
+`;

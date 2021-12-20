@@ -1,39 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonWrapper = styled.button`
-  background: #0079a3;
-  font-weight: bold;
-
-  &:hover {
-      background: #005c7d;
-    }
-
-  &:focus {
-      background: #005c7d;
-    }
-`;
-
-
-const CountryListWrapper = styled.div`
-  background: #6ba410;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: .4rem;
-  padding: .3rem;
-  border-radius: 3px;
-  color: white;
-  font-weight: bold;
-
-  > span:nth-child(1) {
-      flex-grow: 2;
-  }
-
-  &:hover {
-      background: #42860e;
-  }
-`;
-
 const CountriesModal = ({ countries }) => {
   return (
     <>
@@ -89,3 +56,36 @@ const CountriesModal = ({ countries }) => {
 };
 
 export default CountriesModal;
+
+const ButtonWrapper = styled.button`
+  background: #0079a3;
+  font-weight: bold;
+
+  &:hover {
+      background: #005c7d;
+    }
+
+  &:focus {
+      background: #005c7d;
+    }
+`;
+
+
+const CountryListWrapper = styled.div`
+  background: #6ba410;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: .4rem;
+  padding: .3rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+
+  > span:nth-child(1) {
+      flex-grow: 2;
+  }
+
+  &:hover {
+      background: #42860e;
+  }
+`;

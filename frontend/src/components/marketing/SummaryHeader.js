@@ -2,6 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import media from "../../utilities/media";
 
+const SummaryHeader = ({ total }) => {
+  return (
+    <HeaderWrapper>
+      <h1>SURVEY SUMMARY</h1>
+      <a href="/survey-summary">Total: {total}</a>
+    </HeaderWrapper>
+  );
+};
+
+export default SummaryHeader;
+
+
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -45,14 +57,3 @@ const HeaderWrapper = styled.div`
     }
   `}
 `;
-
-const SummaryHeader = ({ total }) => {
-  return (
-    <HeaderWrapper>
-      <h1>SURVEY SUMMARY</h1>
-      <a href="/survey-summary">Total: {total}</a>
-    </HeaderWrapper>
-  );
-};
-
-export default SummaryHeader;

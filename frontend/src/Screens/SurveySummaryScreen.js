@@ -8,36 +8,6 @@ import media from "../utilities/media";
 import CountriesModal from "../components/marketing/CountriesModal";
 import PieCharf from "../components/marketing/PieCharf";
 
-const MainWrapper = styled.div`
-  justify-content: center;
-  margin: 0 auto 0 auto;
-  min-height: 90vh;
-`;
-
-const GridWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 1.6rem;
-  width: 95%;
-  margin: 0 auto 0 auto;
-
-  ${media.medium`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  `}
-`;
-
-const HeadingWrapper = styled.div`
-  width: 95%;
-  margin: .7rem auto 0 auto;
-
-  ${media.medium`
-    width: 100%;
-    margin-top: 1rem;
-  `}
-`;
-
 const SurveySummaryScreen = () => {
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(0);
@@ -103,3 +73,33 @@ const SurveySummaryScreen = () => {
 };
 
 export default SurveySummaryScreen;
+
+const MainWrapper = styled.div`
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  min-height: 90vh;
+`;
+
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 1.6rem;
+  width: 95%;
+  margin: 0 auto 0 auto;
+
+  ${media.medium`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  `}
+`;
+
+const HeadingWrapper = styled.div`
+  width: 95%;
+  margin: .7rem auto 0 auto;
+
+  ${media.medium`
+    width: 100%;
+    margin-top: 1rem;
+  `}
+`;

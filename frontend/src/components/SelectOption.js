@@ -2,17 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SelectWrapper = styled.select`
-  margin: 0 0 1rem 0;
-  border-radius: 5px;
-  height: 2.5rem;
-  width: 100%;
-`;
-
-const LabelWrapper = styled.label`
-  display: block;
-`;
-
 const SelectOption = ({value, data, placeholder, label, onChange}) => {
 
     const handleChange = (event) => {
@@ -52,3 +41,15 @@ SelectOption.defaultProps = {
 };
 
 export default SelectOption;
+
+
+const SelectWrapper = styled.select`
+  margin: 0 0 1rem 0;
+  border-radius: 5px;
+  height: 2.5rem;
+  width: 100%;
+`;
+
+const LabelWrapper = styled.label`
+  display: block;
+`;

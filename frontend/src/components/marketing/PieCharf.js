@@ -2,16 +2,6 @@ import React, { useEffect } from "react";
 import Chart from "chart.js/auto";
 import styled from "styled-components";
 
-const ChartWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-
-  > canvas {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
 const PieCharf = ({ data, chartType, graphTitle, labelColor, canvasId }) => {
   useEffect(() => {
     const xLabel = [];
@@ -95,3 +85,13 @@ const PieCharf = ({ data, chartType, graphTitle, labelColor, canvasId }) => {
 };
 
 export default PieCharf;
+
+const ChartWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  > canvas {
+    width: 100%;
+    height: 100%;
+  }
+`;
