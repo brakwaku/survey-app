@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = () => {
@@ -49,13 +49,12 @@ const Header = () => {
 
 export default Header;
 
-
 const NavWrapper = styled.header`
   nav > div > div > div > a {
     color: #005c7d !important;
   }
 
   > nav {
-    padding: .2rem !important;
+    padding: 0.2rem !important;
   }
 `;
