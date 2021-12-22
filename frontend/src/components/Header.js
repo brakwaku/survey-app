@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 const Header = () => {
@@ -6,14 +6,14 @@ const Header = () => {
     <NavWrapper>
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img
               alt="logo"
               src="//cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/global-header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.svg/1626203683654/ancestry.svg"
               height="33"
               className="d-inline-block align-text-top"
             />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -27,18 +27,18 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
-              <a className="nav-link" aria-current="page" href="/genealogy">
+              <Link className="nav-link" aria-current="page" to="/genealogy">
                 GENEALOGY
-              </a>
-              <a className="nav-link" href="/dna">
+              </Link>
+              <Link className="nav-link" to="/dna">
                 DNA
-              </a>
-              <a className="nav-link" href="/survey-summary">
+              </Link>
+              <Link className="nav-link" to="/survey-summary">
                 SUMMARY
-              </a>
-              <a className="nav-link" href="/">
+              </Link>
+              <Link className="nav-link" to="/">
                 SIGN IN
-              </a>
+              </Link>
             </div>
           </div>
         </div>
