@@ -7,6 +7,7 @@ import SummaryItem from "../components/marketing/SummaryItem";
 import media from "../utilities/media";
 import CountriesModal from "../components/marketing/CountriesModal";
 import PieCharf from "../components/marketing/PieCharf";
+import Loading from "../components/Loading";
 
 const SurveySummaryScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,7 @@ const SurveySummaryScreen = () => {
     <div className="container">
       <MainWrapper>
         {loading ? (
-          <h2>Loading...</h2>
+          <Loading />
         ) : (
           <>
             <HeadingWrapper>

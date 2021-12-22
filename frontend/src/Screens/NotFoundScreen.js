@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 import SurveyLink from "../components/SurveyLink";
 
 const NotFoundScreen = () => {
@@ -7,7 +7,7 @@ const NotFoundScreen = () => {
       <div className="pt-5" style={{ minHeight: 80 + "vh" }}>
         <h1>Page Not Found</h1>
         <p>
-          The page you are trying to reach does not exist. Go <a href='/'>Home</a>
+          The page you are trying to reach does not exist. Go <Link to='/'>Home</Link>
         </p>
       </div>
       <SurveyLink buttonName="Page Edit Suggestion" />
