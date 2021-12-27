@@ -4,6 +4,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import cors from "cors";
 import path from "path";
+import session from 'express-session';
 
 import surveyRoutes from "./routes/surveyRoutes.js";
 
@@ -21,6 +22,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+app.use(session({secret: 'simple secret', resave: false, saveUninitialized: false, }));
 
 app.use("/api/surveys", surveyRoutes);
 

@@ -36,7 +36,7 @@ const Header = () => {
               <Link className="nav-link" to="/survey-summary">
                 SUMMARY
               </Link>
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/signin">
                 SIGN IN
               </Link>
             </div>

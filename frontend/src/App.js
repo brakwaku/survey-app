@@ -9,6 +9,7 @@ import GenealogyScreen from "./Screens/GenealogyScreen";
 import DnaScreen from "./Screens/DnaScreen";
 import NotFoundScreen from "./Screens/NotFoundScreen";
 import InternalErrorScreen from "./Screens/InternalErrorScreen";
+import LoginScreen from "./Screens/LoginScreen";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} exact />
+          <Route path="/signin" element={<LoginScreen />} exact />
           <Route path="/survey" element={<SurveyScreen />} />
           <Route path="/survey-summary" element={<SurveySummaryScreen />} />
           <Route path="/thank-you" element={<ThankyouScreen />} />
