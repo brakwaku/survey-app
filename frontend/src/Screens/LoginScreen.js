@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 // import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from "react-router-dom";
+// import { useNavigate, useLocation } from "react-router-dom";
 // import Message from '../components/Message';
 // import Loader from '../components/Loader';
 import styled from "styled-components";
@@ -29,10 +30,32 @@ const LoginScreen = () => {
   //   }
   // }, [navigate, userInfo, redirect])
 
-  // const submitHandler = (e) => {
-  //     e.preventDefault();
-  //     dispatch(login(email, password))
-  // }
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    // dispatch(login(email, password))
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const userCredentials = {
+      email: email,
+      password: password
+    };
+
+
+    const { status } = await axios.post("/api/signin", { user: userCredentials }, config );
+
+    console.log(`Button clicked: `, userCredentials);
+
+    // if (status !== 201) {
+    //   navigate("/500");
+    // } else {
+    //   navigate("/thank-you", { state: myUrl });
+    // }
+  };
 
   const handleEmail = (email) => setEmail(email);
   const handlePassword = (password) => setPassword(password);
@@ -42,16 +65,18 @@ const LoginScreen = () => {
       <CardWrapper className="card">
         <div className="card-header">Secure login</div>
         <div className="card-body">
-        {/* {error && <Message variant='danger'>{error}</Message>}
+          {/* {error && <Message variant='danger'>{error}</Message>}
         {loading && <Loader />} */}
-          <form>
-          {/* <form onSubmit={submitHandler}> */}
+          <form onSubmit={submitHandler}>
             <InputField
               value={email}
               placeholder="Please enter your email address"
               type="email"
               validators={[
-                { check: validators.email, message: "Please enter a valid email address" },
+                {
+                  check: validators.email,
+                  message: "Please enter a valid email address",
+                },
               ]}
               onChange={handleEmail}
               fontAwesomeIcon="fas fa-envelope"
@@ -60,7 +85,12 @@ const LoginScreen = () => {
               value={password}
               placeholder="Please enter your password"
               type="password"
-              validators={[{ check: validators.required, message: "This field is required", }]}
+              validators={[
+                {
+                  check: validators.required,
+                  message: "This field is required",
+                },
+              ]}
               onChange={handlePassword}
               fontAwesomeIcon="fas fa-key"
             />
