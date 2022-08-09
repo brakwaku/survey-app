@@ -9,7 +9,7 @@ const Header = () => {
           <Link className="navbar-brand" to="/">
             <img
               alt="logo"
-              src="//cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/global-header/master/_jcr_content/root/responsivegrid/header/logo.coreimg.svg/1626203683654/ancestry.svg"
+              src="https://www.logolynx.com/images/logolynx/b4/b4c97628f16c4405260a40f8971c9294.png"
               height="33"
               className="d-inline-block align-text-top"
             />
